@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-vercel": "^1.0.3",
 		"three": "^0.148.0"
 	}
 }
