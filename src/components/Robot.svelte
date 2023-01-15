@@ -18,17 +18,18 @@
     return MathUtils.clamp(a/2*3, 0, 1)
   }
 
-  $: {
-    if (robotScene) {
+  function update(scene: RobotScene) {
+    console.log("update")
+    if (scene.robot) {
       let shiftAmount = window.innerWidth/4
       domElement.style.left = `${Math.min(pos, 0.5) * (shiftAmount * -2) + shiftAmount}px`
 
-      robotScene.robot.rotation.y = MathUtils.degToRad(Math.min(pos, 0.5) * 720 + 45)
-      robotScene.robot.position.y = Math.min(pos, 0.5) * -1 + 2
+      scene.robot.rotation.z = MathUtils.degToRad(Math.min(pos, 0.5) * 720 + 45)
+      scene.robot.position.y = Math.min(pos, 0.5) * -1 + 2
 
-      robotScene.camera.position.y = Math.min(pos, 0.5) * -4 + 4
-      robotScene.camera.position.z = Math.min(pos, 0.5) * -3 + 5
-      robotScene.camera.lookAt(robotScene.robot.position);
+      scene.camera.position.y = Math.min(pos, 0.5) * -3 + 4
+      scene.camera.position.z = Math.min(pos, 0.5) * -2 + 5
+      scene.camera.lookAt(scene.robot.position);
 
       if (hold) {
         container.style.position = "fixed"
@@ -43,10 +44,14 @@
   const scrollHandler = () => {
     hold = window.scrollY < window.innerHeight
     pos = ease(window.scrollY/window.innerHeight)
+
+    if (robotScene && robotScene.robot) {
+      update(robotScene)
+    }
   }
 
   onMount(() => {
-    robotScene = new RobotScene(domElement)
+    robotScene = new RobotScene(domElement, update)
     robotScene.update(true)
 
     scrollHandler()
