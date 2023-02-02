@@ -1,6 +1,6 @@
 # Ocebots Robotics Department
 
-<img src="static/ocebots.png" width="550px">
+<img src="static/ocebot.png">
 
 - Coach: Ms. Farzinfard
 - Captain: Josh
