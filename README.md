@@ -9,4 +9,4 @@
 - Safety Captain: [Abby](https://github.com/Smokeyoy)
 - Strategy & Driving Lead: Katie
 - Electrical Lead: [Josh](https://github.com/JOOT49)
-- Contributors: [Amelia](https://github.com/ameliass123), Demitiri, [Jax](https://github.com/Jaxonville-Florida) Sophia
+- Contributors: [Amelia](https://github.com/ameliass123), [Jax](https://github.com/Jaxonville-Florida), Demitiri, Sophia
